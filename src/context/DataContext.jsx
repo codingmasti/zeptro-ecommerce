@@ -1,6 +1,5 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
-import { property } from "three/tsl";
 
 export const DataContext = createContext(null);
 
