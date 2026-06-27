@@ -25,22 +25,22 @@ function ResponsiveMenu({ showNav, setShowNav, onClick }) {
             <nav className='ml-7 rounded-md mr-2 bg-gray-100'>
                 <ul className=''>
                     <Link to='/' onClick={onClick}>
-                        <li className='text-2xl font-semibold p-2'>Home</li>
+                        <li className='text-xl font-semibold p-2'>Home</li>
                     </Link>
                     <Link to='/wishlist' onClick={onClick}>
-                        <li className='text-2xl font-semibold p-2'>Wishlist</li>
+                        <li className='text-xl font-semibold p-2'>Wishlist</li>
                     </Link>
                     <Link to='/about' onClick={onClick}>
-                        <li className='text-2xl font-semibold p-2'>About Us</li>
+                        <li className='text-xl font-semibold p-2'>About Us</li>
                     </Link>
                     <Link to='/contact' onClick={onClick}>
-                        <li className='text-2xl font-semibold p-2'>Contact Us</li>
+                        <li className='text-xl font-semibold p-2'>Contact Us</li>
                     </Link>
                     <Link to='/products' onClick={onClick}>
-                        <li className='text-2xl font-semibold p-2'>Products</li>
+                        <li className='text-xl font-semibold p-2'>Products</li>
                     </Link>
                     <Link to='/sign-in' onClick={onClick}>
-                        <li className='text-2xl font-semibold p-2'>Login</li>
+                        <li className='text-xl font-semibold p-2'>Login</li>
                     </Link>
                 </ul>
             </nav>

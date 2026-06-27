@@ -54,8 +54,11 @@ const SingleProduct = () => {
     <>
       {
         singleProduct ? (
-          <div className="max-w-7xl mx-auto md:px-4 py-10">
-            <BreadCrums title={singleProduct.title} />
+          <div className="max-w-7xl mx-auto md:px-4 md:py-10">
+            <div className="ml-4">
+              <BreadCrums title={singleProduct.title} />
+            </div>
+
             <div className="grid lg:grid-cols-2 gap-10 px-4">
               {/* Left Side */}
               <div>

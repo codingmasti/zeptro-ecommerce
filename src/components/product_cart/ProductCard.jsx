@@ -24,7 +24,7 @@ function ProductCard({ product }) {
                 <div className='bg-purple-100 w-16 px-1 ml-2 rounded-md absolute flex items-center gap-1.5 -mt-4 md:-mt-7 z-10'>{product?.rating} <span className='text-purple-700'> <FaStar /></span></div>
             </div>
             <div className='w-full h-[30%]'>
-                <h3 className='text-xl font-semibold m-2 line-clamp-1'>{product?.title}</h3>
+                <h3 className='text-sm md:text-xl font-semibold m-2 line-clamp-1'>{product?.title}</h3>
                 <div className='flex text-purple-700 font-medium items-center justify-between my-2 mx-2 -mt-1'>
                     <span>$ {product?.price}</span>
                     <Button onClick={() => {
