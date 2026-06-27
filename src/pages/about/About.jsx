@@ -49,7 +49,7 @@ function AboutUs() {
           <img
             src="https://tenjump.com/wp-content/uploads/2022/11/eCommerce-Website-Components-photo.jpg"
             alt="About Zaptor"
-            className="rounded-2xl shadow-lg w-full h-[400px] object-cover"
+            className="rounded-2xl shadow-lg w-full h-100 object-cover"
           />
         </div>
 
