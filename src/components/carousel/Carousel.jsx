@@ -1,13 +1,13 @@
-import Carosal1 from '../../assets/carousel/carosal.png'
-import Sale from '../../assets/carousel/electronic_sale.png'
-import Fishon from '../../assets/carousel/carosal_faishon.png'
-import X1pro from '../../assets/carousel/x1_pro.png'
+import Carosal1 from '../../assets/carousel/carosal.webp'
+import Sale from '../../assets/carousel/electronic_sale.webp'
+import Fishon from '../../assets/carousel/carosal_faishon.webp'
+import X1pro from '../../assets/carousel/x1_pro.webp'
 import Sumsung_Banner from '../../assets/carousel/Samsung_banner.png'
 import Apple_16pro from '../../assets/carousel/16pro_apple.avif'
 import Watch_bannner from '../../assets/carousel/watch_banner.PNG'
 import Titne_watch from '../../assets/carousel/Titne_watches.jpg'
 import Rolex_watch from '../../assets/carousel/Rolex-Sea-Dweller.webp'
-import Kids_faishon from '../../assets/carousel/Kids_faishon.png'
+import Kids_faishon from '../../assets/carousel/Kids_faishon.webp'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
