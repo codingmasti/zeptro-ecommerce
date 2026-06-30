@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import Carousel from '../../components/carousel/Carousel'
-import CategorySlider from '../../components/category/CategorySlider'
-import BestDeal from '../../components/bestdeal/BestDeals'
-import WinterWear from '../../components/winter-ware/WinterWear'
+const CategorySlider = lazy(() => import('../../components/category/CategorySlider'))
+const BestDeal = lazy(() => import('../../components/bestdeal/BestDeals'))
+const WinterWear = lazy(() => import('../../components/winter-ware/WinterWear'))
 import Adds from '../../components/ads/Adds'
-import ProductCard from '../../components/product_cart/ProductCard'
 import PromotionBanner from '../../components/PromotionalBanner/PromotionBanner'
 
 
@@ -14,12 +13,22 @@ function Home() {
   return (
     <div >
       <Carousel />
-      <CategorySlider />
-      <BestDeal />
+      <Suspense fallback={<div>Loading...</div>}>
+        <CategorySlider />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <BestDeal />
+      </Suspense>
+
       <Adds />
-      <WinterWear /> 
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <WinterWear />
+      </Suspense>
+      
       <PromotionBanner />
-     
+
     </div>
   )
 }
