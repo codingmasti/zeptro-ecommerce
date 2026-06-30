@@ -67,7 +67,7 @@ export default function CategorySlider() {
 
   //const newFilterdData = data?.filter((product) => product.category === selectedCategory)
 
-  const newFilterdData = useMemo(()=>{
+  const newFilterdData = useMemo(() => {
     return data?.filter((product) => product.category === selectedCategory)
   }, [data, selectedCategory])
 
@@ -140,7 +140,11 @@ export default function CategorySlider() {
               onClick={() => setSelectedCategory(category.category)}
             >
               <div className="bg-gray-200 w-20 h-20 md:h-32.5 md:w-32.5 rounded-full overflow-hidden">
-                <img src={category.image} alt=""
+                <img src={category.image} alt={category.category}
+                  width={300}
+                  height={300}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover hover:scale-105 transition duration-300" />
               </div>
               <h3 className="text-sm md:text-lg font-semibold mt-2">{category.category}</h3>
@@ -158,14 +162,14 @@ export default function CategorySlider() {
         )}
       </div>
 
-       {/* Product list */}
+      {/* Product list */}
 
       <div className="grid grid-cols-2 lg:grid-cols-5 max-w-7xl mx-auto gap-4">
         {
           newFilterdData?.slice(0, 5).map((item) => {
             return (
               <div key={item.id}
-              className="m-2" >
+                className="m-2" >
                 <ProductCard product={item} />
               </div>
             )

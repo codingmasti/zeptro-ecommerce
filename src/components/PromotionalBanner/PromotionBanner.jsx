@@ -1,6 +1,6 @@
 import React from 'react'
 import Home_Kitchen from '../../assets/home&kitchen.png'
-import Personal_Care from '../../assets/personalcare.png'
+import Personal_Care from '../../assets/personalcare.webp'
 import Tech from '../../assets/tech.avif'
 import Kids_Product from '../../assets/kids-porduct.png'
 import Food_Groceries from '../../assets/food&groceries.png'
@@ -40,7 +40,13 @@ function PromotionBanner() {
                 <div className="flex justify-center gap-4 -mt-16 relative z-10">
                     {categories.map((item, index) => (
                         <div key={index} className="w-52 bg-white rounded-lg shadow-md p-4">
-                            <img src={item.image} className="h-32 mx-auto" />
+                            <img src={item.image} 
+                            alt={item.title}
+                            width={300}
+                            height={300}
+                            loading='lazy'
+                            decoding='async'
+                            className="h-32 mx-auto" />
                             <h2 className="text-center mt-3">{item.title}</h2>
                         </div>
                     ))}

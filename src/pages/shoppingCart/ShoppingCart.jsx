@@ -2,7 +2,7 @@
 import React from 'react'
 import { BlackButton } from '../../components/button/Button'
 import { useCartContext } from '../../context/CartContext'
-import FindItem from '../../../public/finditem.gif'
+import FindItem from '../../../public/empty-cart.avif'
 import { FaMinus, FaPlus } from 'react-icons/fa'
 import { RxCross1 } from "react-icons/rx";
 import { Link } from 'react-router-dom'
@@ -15,7 +15,7 @@ const MyCart = () => {
   //console.log(cartItem)
 
   return (
-    <section className='bg-[#fbfbfb] '>
+    <section className='bg-[#ffffff] '>
       <div className='max-w-7xl md:mx-auto flex flex-col '>
         <div className='flex w-full h-15  md:ml-5'>
           <Link to='/products'>
