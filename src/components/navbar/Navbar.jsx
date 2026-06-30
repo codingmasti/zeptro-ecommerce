@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/react'
 import { IoCartOutline } from 'react-icons/io5';
@@ -21,16 +21,22 @@ const Navbar = () => {
 
     const [showNav, setShowNav] = useState(false)
 
-    const toggleMenue = () => {
-        setShowNav(!showNav);
-    }
+    // const toggleMenue = () => {
+    //     setShowNav(!showNav);
+    // }
+
+    const toggleMenu = useCallback(()=>{
+        setShowNav(prev => !prev)
+    },[])
+
+    console.log("Navebar render...")
+
+    const toggleLocationDropDown = useCallback(() => {
+        setOpenDropeDown(prev => !prev);
+
+    },[setOpenDropeDown])
 
 
-
-    const toggleLocationDropDown = () => {
-        setOpenDropeDown(!openDropDown);
-
-    }
     return (
         <div className=' bg-white py-3 shadow-2xl z-50 '>
             <div className='w-full mx-auto flex justify-between px-2 items-center relative'>
@@ -91,7 +97,7 @@ const Navbar = () => {
 
                     <div className='md:hidden'>
                         {
-                            showNav ? <RxCross1 onClick={toggleMenue} className='text-2xl' /> :<RxHamburgerMenu onClick={toggleMenue} className='text-2xl'/> 
+                            showNav ? <RxCross1 onClick={toggleMenu} className='text-2xl' /> :<RxHamburgerMenu onClick={toggleMenu} className='text-2xl'/> 
                           
                         }
 
@@ -112,7 +118,7 @@ const Navbar = () => {
 
                 
             </div>
-           <ResponsiveMenu showNav={showNav} setShowNav={setShowNav} onClick={toggleMenue}/>
+           <ResponsiveMenu showNav={showNav} setShowNav={setShowNav} onClick={toggleMenu}/>
         </div>
     )
 }

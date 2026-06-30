@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { UserButton, useUser } from '@clerk/react'
 import Avatar from '@mui/material/Avatar'
 import { Link } from 'react-router-dom'
@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function ResponsiveMenu({ showNav, setShowNav, onClick }) {
 
     const { user } = useUser()
-    console.log(user)
+    console.log("user == ",user)
     return (
         <div className={`${showNav ? 'left-0' : '-left-full'} fixed bottom-0 top-0 flex flex-col gap-15 w-[75%] flxe-col z-20 bg-white/95  shadow-md transition-all duraition-300`}>
             <div>
@@ -48,4 +48,4 @@ function ResponsiveMenu({ showNav, setShowNav, onClick }) {
     )
 }
 
-export default ResponsiveMenu
+export default memo(ResponsiveMenu)

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 export const DataContext = createContext(null);
 
@@ -76,8 +76,8 @@ const DataProvider = ({ children }) => {
     "brand"
   );
 
-  const value = {
-    data,
+  const value = useMemo(()=>({
+     data,
     setData,
     fetchAllProducts,
 
@@ -93,9 +93,28 @@ const DataProvider = ({ children }) => {
 
     selectedCategory,
     setSelectedCategory,
+  }),[data, selectedCategory])
+
+  // const value = {
+  //   data,
+  //   setData,
+  //   fetchAllProducts,
+
+  //   categoryOnlyData,
+  //   brandOnlyData,
 
 
-  }
+  //   categories,
+
+
+  //   search,
+  //   setSearch,
+
+  //   selectedCategory,
+  //   setSelectedCategory,
+
+
+  // }
 
   return (
     <DataContext.Provider value={value}>

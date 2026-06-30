@@ -1,22 +1,22 @@
 
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 export const CartContext = createContext(null);
 
 export const CartProvider = ({ children }) => {
     const [cartItem, setCartItem] = useState(() => {
         const savedCart = localStorage.getItem("cart");
-        return savedCart ? JSON.parse(savedCart) : [] 
+        return savedCart ? JSON.parse(savedCart) : []
     });
 
-    useEffect(()=>{
+    useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cartItem))
     }, [cartItem])
 
 
 
-   // console.log("Cart item ==", cartItem)
+    // console.log("Cart item ==", cartItem)
 
     const addToCart = (product, quantity = 1) => {
         //console.log("Added:", product);
@@ -26,7 +26,7 @@ export const CartProvider = ({ children }) => {
             setCartItem(cartItem.map((item) => item.id === product.id ? { ...item, cartQuantity: item.cartQuantity + quantity } : item))
 
         } else {
-            setCartItem([...cartItem, { ...product, cartQuantity:quantity}]);
+            setCartItem([...cartItem, { ...product, cartQuantity: quantity }]);
         }
 
     };
@@ -47,21 +47,27 @@ export const CartProvider = ({ children }) => {
             cartItem.map((item) => item.id === id ?
                 {
                     ...item,
-                    cartQuantity: Math.max( 1,  item.cartQuantity - 1)
+                    cartQuantity: Math.max(1, item.cartQuantity - 1)
                 } : item
             )
         )
     }
 
-    const removeFromCart = (id) =>{
+    const removeFromCart = (id) => {
         setCartItem(
             cartItem.filter((item) => item.id !== id)
         )
     }
 
-    const Price = cartItem.reduce((total, item) => 
-        total + item.price * item.cartQuantity, 0
-    )
+    // const Price = cartItem.reduce((total, item) =>
+    //     total + item.price * item.cartQuantity, 0
+    // )
+
+    const Price = useMemo(() => (
+        cartItem.reduce((total, item) =>
+            total + item.price * item.cartQuantity, 0
+        )
+    ), [addToCart,incrementQuantity, decrementQuantity, removeFromCart])
 
     const totalPrice = Price.toFixed(2)
 

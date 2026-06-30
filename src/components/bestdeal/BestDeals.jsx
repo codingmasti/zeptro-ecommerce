@@ -7,12 +7,13 @@ import { Link } from 'react-router-dom';
 
 
 const BestDeal = () => {
-  const { data, fetchAllProducts } = useMyContext();
+  const { data} = useMyContext();
 
-  useEffect(() => {
-    fetchAllProducts()
-  }, [])
+  // useEffect(() => {
+  //   fetchAllProducts()
+  // }, [])
 
+  console.log("Beast deal run huaa...")
 
   return (
     <section className='mt-6'>

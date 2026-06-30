@@ -1,4 +1,4 @@
-import React from 'react'
+import {memo} from 'react'
 import { Button } from '../button/Button'
 import { FaHeart, FaStar } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
@@ -19,7 +19,11 @@ function ProductCard({ product }) {
 
                 <img src={product?.thumbnail}
                     onClick={() => navigate(`/products/${product.id}`)}
-                    alt=""
+                    alt={product?.title}
+                    width={300}
+                    height={300}
+                    loading="lazy"
+                    decoding='async'
                     className='hover:scale-105 transition duration-300' />
                 <div className='bg-purple-100 w-16 px-1 ml-2 rounded-md absolute flex items-center gap-1.5 -mt-4 md:-mt-7 z-10'>{product?.rating} <span className='text-purple-700'> <FaStar /></span></div>
             </div>
@@ -38,4 +42,4 @@ function ProductCard({ product }) {
     )
 }
 
-export default ProductCard
+export default memo(ProductCard)

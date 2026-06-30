@@ -7,11 +7,13 @@ const WinterWear = () => {
 
 
 
-  const { data, fetchAllProducts } = useMyContext();
+  const { data } = useMyContext();
 
-  useEffect(() => {
-    fetchAllProducts()
-  }, [])
+  // useEffect(() => {
+  //   fetchAllProducts()
+  // }, [])
+
+  console.log("Winter ware render huaa...")
   return (
     <section className='mt-4' >
       <div className="max-w-7xl bg-gray-100 mx-auto px-4 py-8 rounded-md">

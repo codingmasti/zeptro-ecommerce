@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useMemo } from "react";
 
 import Beauty from '../../assets/beauty.png'
 import HomeDecoration from '../../assets/homedecoration.webp'
@@ -65,7 +65,11 @@ export default function CategorySlider() {
 
   const { data, selectedCategory, setSelectedCategory } = useMyContext()
 
-  const newFilterdData = data?.filter((product) => product.category === selectedCategory)
+  //const newFilterdData = data?.filter((product) => product.category === selectedCategory)
+
+  const newFilterdData = useMemo(()=>{
+    return data?.filter((product) => product.category === selectedCategory)
+  }, [data, selectedCategory])
 
   const [showPrev, setShowPrev] = useState(false);
   const [showNext, setShowNext] = useState(true);
@@ -104,10 +108,10 @@ export default function CategorySlider() {
   }, []);
 
 
+  console.log("Category slider run huaa.....")
 
 
 
-  console.log("selected category ==== ", newFilterdData)
   return (
     <section className="mt-10">
       <div className="relative flex flex-col justify-center max-w-7xl mx-auto my-5">
