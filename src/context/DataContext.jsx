@@ -18,14 +18,13 @@ const DataProvider = ({ children }) => {
       const URL = "https://dummyjson.com/products?limit=194"
 
       const res = await axios.get(URL);
-      //console.log("API Data=", res.data)
       setData(res.data.products);
     } catch (error) {
       console.log("Product API ERROR =", error);
     }
   };
 
-  //console.log("data ", data)
+
 
   useEffect(() => {
     fetchAllProducts();
@@ -56,7 +55,6 @@ const DataProvider = ({ children }) => {
       return curElem[property]
     })
     newVal = ["All", ...new Set(newVal)]
-    //console.log(newVal)
     return newVal
   }
 
@@ -95,26 +93,6 @@ const DataProvider = ({ children }) => {
     setSelectedCategory,
   }), [data, search, selectedCategory])
 
-  // const value = {
-  //   data,
-  //   setData,
-  //   fetchAllProducts,
-
-  //   categoryOnlyData,
-  //   brandOnlyData,
-
-
-  //   categories,
-
-
-  //   search,
-  //   setSearch,
-
-  //   selectedCategory,
-  //   setSelectedCategory,
-
-
-  // }
 
   return (
     <DataContext.Provider value={value}>

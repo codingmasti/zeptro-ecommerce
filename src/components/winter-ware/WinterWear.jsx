@@ -9,10 +9,6 @@ const WinterWear = () => {
 
   const { data } = useMyContext();
 
-  // useEffect(() => {
-  //   fetchAllProducts()
-  // }, [])
-
   console.log("Winter ware render huaa...")
   return (
     <section className='mt-4' >

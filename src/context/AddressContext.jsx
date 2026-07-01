@@ -31,7 +31,6 @@ const AddressProvider = ({ children }) => {
                     );
 
                     const data = await response.json();
-                    //console.log("data",data)
 
                     setLocation(data.address);
                     setOpenDropeDown(false);

@@ -21,9 +21,6 @@ const Navbar = () => {
 
     const [showNav, setShowNav] = useState(false)
 
-    // const toggleMenue = () => {
-    //     setShowNav(!showNav);
-    // }
 
     const toggleMenu = useCallback(()=>{
         setShowNav(prev => !prev)
@@ -42,7 +39,7 @@ const Navbar = () => {
             <div className='w-full mx-auto flex justify-between px-2 items-center relative'>
                 {/* Logo section */}
 
-                <div className='flex gap-7 items-center w-[20%] '>
+                <div className='flex gap-7 items-center justify-center w-[20%] '>
                     <Link to='/'><h1 className='font-bold text-3xl'><span className='text-[#7c3aed] font-serif'>Z</span>aptro</h1></Link>
 
                     <div className='hidden md:flex gap-1 cursor-pointer text-gray-700 items-center'>

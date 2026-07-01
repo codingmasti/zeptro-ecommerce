@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 
 import { FaStar } from 'react-icons/fa6';
 import { Button } from '../../components/button/Button';
@@ -31,7 +31,6 @@ const Products = () => {
   }
 
   const handleCategoryChange = (e) => {
-    //console.log("handle= ", e.target.value)
     setCategory(e.target.value)
     setSelectedCategory("All")
     setPage(1)
@@ -42,35 +41,37 @@ const Products = () => {
 
 
 
+  const filteredData = useMemo(() => {
+    return data?.filter((item) => {
+      const matchesSearch =
+        searchValue === "" ||
+        item.title?.toLowerCase().includes(searchValue) ||
+        item.brand?.toLowerCase().includes(searchValue) ||
+        item.category?.toLowerCase().includes(searchValue);
 
-  const filteredData = data?.filter((item) => {
-    //console.log("Data from ===", item)
-    const matchesSearch =
-      searchValue === "" ||
-      item.title?.toLowerCase().includes(searchValue) ||
-      item.brand?.toLowerCase().includes(searchValue) ||
-      item.category?.toLowerCase().includes(searchValue);
+      const matchesCategory =
+        activeCategory === "All" ||
+        item.category === activeCategory;
 
-    const matchesCategory =
-      activeCategory === "All" ||
-      item.category === activeCategory;
-
-    return (
-      matchesSearch &&
-      matchesCategory &&
-      (brand === "All" || item.brand === brand) &&
-      item.price >= Number(priceRange[0]) &&
-      item.price <= Number(priceRange[1])
-    );
-  });
+      return (
+        matchesSearch &&
+        matchesCategory &&
+        (brand === "All" || item.brand === brand) &&
+        item.price >= Number(priceRange[0]) &&
+        item.price <= Number(priceRange[1])
+      );
+    })
+  },[data, activeCategory, brand, priceRange, searchValue])
 
   const PageHandler = (selectedPage) => {
     setPage(selectedPage)
   }
 
-  const DynamicPage = () => {
+
+
+  const DynamicPage = useMemo(() => {
     return Math.ceil(filteredData?.length / 12)
-  }
+  },[filteredData])
 
   //Handle show filter menue
   const handleFilterMenu = () => {
@@ -79,10 +80,9 @@ const Products = () => {
 
 
   const noProductDueToPrice = filteredData.length === 0 && priceRange[1] < Math.max(...data?.map((item) => item.price))
-  //console.log("Dynamic page == ", DynamicPage())
+
 
   useEffect(() => {
-    fetchAllProducts()
     window.scrollTo(0, 0)
   }, [])
 
@@ -103,8 +103,6 @@ const Products = () => {
     }
   }, [deboncedSearch]);
 
-
-  //console.log("Mydata", data)
 
 
 
@@ -182,14 +180,14 @@ const Products = () => {
 
                   <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mt-7 md:mt-0 gap-4'>
                     {
+                      
                       filteredData?.slice(page * 12 - 12, page * 12).map((product) => {
-                        //console.log(product)
-                        return (<ProductCard product={product} />)
+                        return (<ProductCard key={product.id} product={product} />)
                       })
                     }
                   </div>
                   <div className='mx-auto w-[80%]'>
-                    <Pagination PageHandler={PageHandler} page={page} DynamicPage={DynamicPage()}
+                    <Pagination PageHandler={PageHandler} page={page} DynamicPage={DynamicPage}
                     />
                   </div>
 

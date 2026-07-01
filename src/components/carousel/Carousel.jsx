@@ -36,19 +36,25 @@ function Carousel() {
         <SwiperSlide>
           <div className='max-w-7xl h-50 mx-auto flex items-center justify-between gap-4 lg:h-96'>
             <div className='w-full h-45 m-1 lg:h-96 lg:w-[70%] rounded-2xl overflow-hidden '>
-              <img src={Carosal1} alt=""
+              <img src={Carosal1} loading="eager"
+                fetchPriority="high"
+                alt="Hero"
                 className='w-full h-full object-cover' />
             </div>
 
             <div className='hidden lg:flex lg:w-[29%] md:h-96 flex-col justify-between'>
 
               <div className='w-full md:block lg:h-[49%] rounded-2xl overflow-hidden'>
-                <img src={Fishon} alt=""
+                <img src={Fishon} loading="eager"
+                  fetchPriority="high"
+                  alt="Hero"
                   className='w-full h-full object-cover' />
               </div>
 
               <div className=' lg:block w-full h-[49%] rounded-2xl overflow-hidden'>
-                <img src={Kids_faishon} alt=""
+                <img src={Kids_faishon} loading="eager"
+                  fetchPriority="high"
+                  alt="Hero"
                   className='w-full h-full object-cover' />
               </div>
             </div>
@@ -59,13 +65,17 @@ function Carousel() {
         <SwiperSlide>
           <div className='max-w-7xl h-50 lg:h-96 flex mx-auto justify-between'>
             <div className='w-full md:w-[70%] h-45 m-1 md:h-full overflow-hidden rounded-2xl '>
-              <img src={Sale} alt=""
+              <img src={Sale} loading="eager"
+                fetchPriority="high"
+                alt="Hero"
                 className='w-full h-full object-cover' />
             </div>
 
             <div className='w-[29%]h-full hidden md:flex flex-col justify-between overflow-hidden rounded-2xl'>
-            <img src={X1pro} alt="" 
-            className='w-full h-full object-cover'/>
+              <img src={X1pro} loading="eager"
+                fetchPriority="high"
+                alt="Hero"
+                className='w-full h-full object-cover' />
             </div>
           </div>
         </SwiperSlide>
@@ -73,19 +83,25 @@ function Carousel() {
         <SwiperSlide>
           <div className='max-w-7xl h-50 lg:h-96 flex mx-auto justify-between'>
             <div className='w-full md:w-[70%] h-45 m-1 md:h-full overflow-hidden rounded-2xl '>
-              <img src={Watch_bannner} alt=""
+              <img src={Watch_bannner} loading="eager"
+                fetchPriority="high"
+                alt="Hero"
                 className='w-full h-full object-cover' />
             </div>
 
             <div className='hidden md:w-[29%] h-96 md:flex flex-col justify-between'>
 
               <div className='w-full h-[49%] bg-emerald-300 rounded-2xl overflow-hidden'>
-                <img src={Titne_watch} alt=""
+                <img src={Titne_watch} loading="eager"
+                  fetchPriority="high"
+                  alt="Hero"
                   className='w-full h-full object-cover' />
               </div>
 
               <div className='w-full h-[49%] bg-blue-300 rounded-2xl overflow-hidden'>
-                <img src={Rolex_watch} alt=""
+                <img src={Rolex_watch} loading="eager"
+                  fetchPriority="high"
+                  alt="Hero"
                   className='w-full h-full object-cover' />
               </div>
             </div>
@@ -95,13 +111,17 @@ function Carousel() {
         <SwiperSlide>
           <div className='max-w-7xl h-50 lg:h-96 flex mx-auto justify-between'>
             <div className='w-full h-45 m-1 md:w-[70%] md:h-full overflow-hidden rounded-2xl '>
-              <img src={Sumsung_Banner} alt=""
+              <img src={Sumsung_Banner} loading="eager"
+                fetchPriority="high"
+                alt="Hero"
                 className='w-full h-full object-cover ' />
             </div>
 
             <div className='hidden md:w-[29%] h-full md:flex flex-col justify-between overflow-hidden rounded-2xl'>
-            <img src={Apple_16pro} alt="" 
-            className='w-full h-full object-cover'/>
+              <img src={Apple_16pro} loading="eager"
+                fetchPriority="high"
+                alt="Hero"
+                className='w-full h-full object-cover' />
             </div>
           </div>
         </SwiperSlide>

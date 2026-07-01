@@ -9,7 +9,6 @@ function ProductCard({ product }) {
     const navigate = useNavigate()
 
 
-    // console.log(product)
     const { AddToWishlist } = useWishlistContext()
     const { addToCart } = useCartContext()
     return (
@@ -32,7 +31,6 @@ function ProductCard({ product }) {
                 <div className='flex text-purple-700 font-medium items-center justify-between my-2 mx-2 -mt-1'>
                     <span>$ {product?.price}</span>
                     <Button onClick={() => {
-                        //console.log("clicked")
                         addToCart(product)
                     }} content="ADD" />
                 </div>

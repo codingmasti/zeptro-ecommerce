@@ -12,7 +12,6 @@ const MyCart = () => {
 
   const { cartItem, totalPrice, incrementQuantity, decrementQuantity, removeFromCart } = useCartContext()
 
-  //console.log(cartItem)
 
   return (
     <section className='bg-[#ffffff] '>

@@ -118,7 +118,6 @@ const CheckoutStepper = ({ stepsConfig = [] }) => {
 
             <OrderSuccessPopup
                 isOpen={showPopup}
-                //onViewOrder={() => console.log("View Order")}
                 onContinueShopping={() => {
                     setShowPopup(false);
                 }}

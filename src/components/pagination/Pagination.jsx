@@ -4,7 +4,6 @@ import React from 'react'
 function Pagination({ PageHandler, page, DynamicPage }) {
 
   const getPages = (current, total) => {
-    //console.log("Total ==", total)
     const pages = []
     if (total <= 5) {
       for (let i = 1; i <= 5; i++) {

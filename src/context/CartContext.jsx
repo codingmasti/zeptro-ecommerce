@@ -59,10 +59,6 @@ export const CartProvider = ({ children }) => {
         )
     }
 
-    // const Price = cartItem.reduce((total, item) =>
-    //     total + item.price * item.cartQuantity, 0
-    // )
-
     const Price = useMemo(() => (
         cartItem.reduce((total, item) =>
             total + item.price * item.cartQuantity, 0

@@ -9,10 +9,6 @@ import { Link } from 'react-router-dom';
 const BestDeal = () => {
   const { data} = useMyContext();
 
-  // useEffect(() => {
-  //   fetchAllProducts()
-  // }, [])
-
   console.log("Beast deal run huaa...")
 
   return (
