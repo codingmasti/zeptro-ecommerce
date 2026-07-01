@@ -67,7 +67,7 @@ export const CartProvider = ({ children }) => {
         cartItem.reduce((total, item) =>
             total + item.price * item.cartQuantity, 0
         )
-    ), [addToCart,incrementQuantity, decrementQuantity, removeFromCart])
+    ), [cartItem])
 
     const totalPrice = Price.toFixed(2)
 

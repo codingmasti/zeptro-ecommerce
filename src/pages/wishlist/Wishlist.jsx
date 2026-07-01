@@ -51,7 +51,7 @@ const Wishlist = () => {
                 </p>
 
                 <div className="flex gap-1 md:gap-3 p-1 ">
-                  <Button content="Add to cart" onClick={() => addToCart(wishlistItem)} />
+                  <Button content="Add to cart" onClick={() => addToCart(item)} />
 
                   <button
                     onClick={() => RemoveFromWishlist(item.id)}

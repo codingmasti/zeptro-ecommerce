@@ -33,7 +33,7 @@ const MyCart = () => {
 
           ) : (
             <div className='w-full mt-5 flex flex-col md:flex-row justify-between'>
-              <div className='lg:w-[68%] overflow-y-auto'>
+              <div className='lg:w-[68%] lg:h-[80vh] overflow-y-auto'>
 
                 {
                   cartItem?.map((item) => {

@@ -76,8 +76,8 @@ const DataProvider = ({ children }) => {
     "brand"
   );
 
-  const value = useMemo(()=>({
-     data,
+  const value = useMemo(() => ({
+    data,
     setData,
     fetchAllProducts,
 
@@ -93,7 +93,7 @@ const DataProvider = ({ children }) => {
 
     selectedCategory,
     setSelectedCategory,
-  }),[data, selectedCategory])
+  }), [data, search, selectedCategory])
 
   // const value = {
   //   data,
