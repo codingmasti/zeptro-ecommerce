@@ -1,11 +1,11 @@
 import React, { useRef, useState, useEffect, useMemo } from "react";
 
-import Beauty from '../../assets/beauty.png'
+import Beauty from '../../assets/beauty.webp'
 import HomeDecoration from '../../assets/homedecoration.webp'
 import Fragnence from '../../assets/fragnence.webp'
 import Kitchen from '../../assets/kitchen.webp'
 import Furniture from '../../assets/furniture.webp'
-import SkinCare from '../../assets/skin-care.png'
+import SkinCare from '../../assets/skin-care.webp'
 import Tshirt from '../../assets/white-tshirt.png'
 import Women_Dress from '../../assets/women-dress.jpg'
 import { Link } from "react-router-dom";
