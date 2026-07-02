@@ -31,7 +31,7 @@ function ContactUs() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
+    <div className="max-w-6xl mx-auto px-4 py-12">
 
       {/* Heading */}
       <div className="text-center mb-12">

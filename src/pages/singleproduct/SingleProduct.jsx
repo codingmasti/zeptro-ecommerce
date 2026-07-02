@@ -54,7 +54,7 @@ const SingleProduct = () => {
     <>
       {
         singleProduct ? (
-          <div className="max-w-7xl mx-auto md:px-4 md:py-10">
+          <div className="max-w-6xl mx-auto md:px-4 md:py-10">
             <div className="ml-4">
               <BreadCrums title={singleProduct.title} />
             </div>

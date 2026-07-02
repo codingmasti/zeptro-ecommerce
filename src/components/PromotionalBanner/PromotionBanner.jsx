@@ -19,7 +19,7 @@ function PromotionBanner() {
 
     return (
         <section>
-            <div className="max-w-7xl hidden md:flex md:flex-col my-10 mx-auto">
+            <div className="max-w-6xl hidden md:flex md:flex-col my-10 mx-auto">
 
                 {/* Banner */}
                 <div className="bg-purple-700 border border-purple-800 h-70 rounded-xl relative px-10 py-8">

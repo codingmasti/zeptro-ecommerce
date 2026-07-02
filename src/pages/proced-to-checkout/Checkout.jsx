@@ -22,7 +22,7 @@ const stepsConfig = [
 
 function Checkout() {
   return (
-    <div className='max-w-7xl flex  md:mx-auto'>
+    <div className='max-w-6xl flex  md:mx-auto'>
       <div className='w-full lg:mx-auto'>
         <CheckoutStepper stepsConfig={stepsConfig} />
       </div>

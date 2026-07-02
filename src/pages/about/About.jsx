@@ -26,7 +26,7 @@ function AboutUs() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
+    <div className="max-w-6xl mx-auto px-4 py-12">
 
       {/* Hero Section */}
       <section className="text-center mb-16">

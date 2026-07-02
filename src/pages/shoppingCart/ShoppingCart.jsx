@@ -15,7 +15,7 @@ const MyCart = () => {
 
   return (
     <section className='bg-[#ffffff] '>
-      <div className='max-w-7xl md:mx-auto flex flex-col '>
+      <div className='max-w-6xl md:mx-auto flex flex-col '>
         <div className='flex w-full h-15  md:ml-5'>
           <Link to='/products'>
             <BlackButton content="← Back to Shop" />

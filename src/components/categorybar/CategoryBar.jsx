@@ -13,7 +13,7 @@ const CategoryBar = () => {
 
   return (
     <div className="w-full bg-white scrollbar-none shadow-sm overflow-x-auto">
-      <div className="max-w-7xl mx-auto flex items-center gap-6 px-4 py-3 whitespace-nowrap">
+      <div className="max-w-6xl mx-auto flex items-center gap-6 px-4 py-3 whitespace-nowrap">
         {categoryOnlyData.map((category) => (
           <NavLink
             key={category}

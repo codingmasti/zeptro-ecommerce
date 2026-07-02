@@ -13,7 +13,7 @@ const CheckoutStepper = ({ stepsConfig = [] }) => {
         marginRight: 0
     })
     const [showPopup, setShowPopup] = useState(false)
-    const {address} = useAddressContext()
+    const {address, paymentMethod} = useAddressContext()
     const stepRef = useRef([])
 
 
@@ -72,7 +72,7 @@ const CheckoutStepper = ({ stepsConfig = [] }) => {
     }
     return (
         <>
-            <div className='flex mx-2 justify-between bg-gray-50 border max-w-7xl rounded-md border-gray-300 mt-8'>
+            <div className='flex mx-2 justify-between bg-gray-50 border max-w-6xl rounded-md border-gray-300 mt-8'>
                 <div className='relative w-full md:w-[50%] md:mt-5 p-2 flex lg:mx-auto items-center justify-between   '>
 
                     {stepsConfig.map((step, index) => {
@@ -111,7 +111,7 @@ const CheckoutStepper = ({ stepsConfig = [] }) => {
             <div className='flex justify-center mt-5'>
                 {!isCompleate && (
                     <button 
-                    disabled={!validateStep(currentStep)}
+                    disabled={!validateStep(currentStep) || !paymentMethod}
                     className='px-5 rounded-md py-1.5 md:w-[15%] mx-auto bg-[#7c3aed] text-lg text-white ' onClick={handleNext}>{currentStep === stepsConfig.length ? "Place Order" : "Next"}</button>
                 )}
             </div>

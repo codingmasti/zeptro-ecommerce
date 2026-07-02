@@ -17,7 +17,7 @@ const Wishlist = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-5 py-10">
+    <div className="max-w-6xl mx-auto px-5 py-10">
       {/* Heading */}
       <div className="flex items-center gap-3 mb-8">
         <FaHeart className="text-red-500 text-3xl" />
@@ -27,7 +27,7 @@ const Wishlist = () => {
       </div>
 
       {wishlistItem.length > 0 ? (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 place-items-center md:grid-cols-3 lg:grid-cols-4 gap-4">
           {wishlistItem.map((item) => (
             <div
               key={item.id}

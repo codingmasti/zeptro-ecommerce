@@ -14,7 +14,7 @@ function OrderReview() {
   
 
   return (
-    <div className="max-w-7xl mx-auto bg-white  p-6 rounded-lg shadow">
+    <div className="max-w-6xl mx-auto bg-white  p-6 rounded-lg shadow">
       <h2 className="text-2xl font-semibold mb-6">
         Review Your Order
       </h2>

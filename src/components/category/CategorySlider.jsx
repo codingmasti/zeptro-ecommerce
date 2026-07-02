@@ -114,7 +114,7 @@ export default function CategorySlider() {
 
   return (
     <section className="mt-10">
-      <div className="relative flex flex-col justify-center max-w-7xl mx-auto my-5">
+      <div className="relative flex flex-col justify-center max-w-6xl mx-auto my-5">
         <div className="flex justify-between items-center px-2">
           <h3 className=" text-xl md:text-3xl font-bold my-5">Explore Popular Categories</h3>
           <Link to="/products" className="text-purple-500">Viwe all</Link>

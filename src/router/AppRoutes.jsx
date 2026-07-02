@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from '../layout/Layout'
+import {Toaster} from 'react-hot-toast'
 const Home = lazy(() => import('../pages/home/Home'))
 const Products = lazy(() => import('../pages/products/Products'))
 const SingleProduct = lazy(() => import('../pages/singleproduct/SingleProduct'))
@@ -22,9 +23,7 @@ function AppRoutes() {
       children: [
         {
           index: true,
-          element:
-            <Home />
-
+          element:<Home />
         },
         {
           path: '/products',
@@ -79,7 +78,12 @@ function AppRoutes() {
 
     }
   ])
-  return (<RouterProvider router={router} />)
+  return <><RouterProvider router={router} />
+  {/* use hot toast */}
+  <Toaster
+  position='top-right'
+  reverseOrder={false} 
+  toastOptions={{duration:2000}}/></>
 }
 
 export default AppRoutes;

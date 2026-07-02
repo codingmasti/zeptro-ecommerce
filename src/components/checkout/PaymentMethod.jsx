@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useAddressContext } from "../../context/AddressContext";
 
 function PaymentMethod() {
-  const {paymentMethod, setPaymentMethod} = useAddressContext()
+  
 
   return (
     <div className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow">

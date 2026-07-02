@@ -1,5 +1,5 @@
 
-
+import toast from "react-hot-toast";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 export const CartContext = createContext(null);
@@ -16,19 +16,15 @@ export const CartProvider = ({ children }) => {
 
 
 
-    // console.log("Cart item ==", cartItem)
 
     const addToCart = (product, quantity = 1) => {
-        //console.log("Added:", product);
         const existingProduct = cartItem.find((item) => item.id === product.id)
-        //console.log("existing ====",existingProduct)
         if (existingProduct) {
-            setCartItem(cartItem.map((item) => item.id === product.id ? { ...item, cartQuantity: item.cartQuantity + quantity } : item))
-
+            toast.error("Product is already in your cart.");
         } else {
             setCartItem([...cartItem, { ...product, cartQuantity: quantity }]);
+            toast.success("Product added successfully!");
         }
-
     };
 
     const incrementQuantity = (id) => {
@@ -57,6 +53,7 @@ export const CartProvider = ({ children }) => {
         setCartItem(
             cartItem.filter((item) => item.id !== id)
         )
+        toast.success("Product removed from cart!");
     }
 
     const Price = useMemo(() => (
