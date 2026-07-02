@@ -164,9 +164,9 @@ export default function CategorySlider() {
 
       {/* Product list */}
 
-      <div className="grid grid-cols-2 lg:grid-cols-5 max-w-7xl mx-auto gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto gap-4">
         {
-          newFilterdData?.slice(0, 5).map((item) => {
+          newFilterdData?.slice(0, 4).map((item) => {
             return (
               <div key={item.id}
                 className="m-2" >

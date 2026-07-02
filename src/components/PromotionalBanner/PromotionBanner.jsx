@@ -31,9 +31,7 @@ function PromotionBanner() {
                         Good for you, great for the Earth.
                     </p>
 
-                    <button className="absolute right-10 top-10 bg-black text-white px-5 py-2 rounded-full">
-                        Buy eco-friendly product
-                    </button>
+                    
                 </div>
 
                 {/* Cards */}
